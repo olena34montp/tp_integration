@@ -9,11 +9,19 @@
                     </h2>
                     <ul class="list-unstyled list-hours mb-5 text-left mx-auto">
                         <?php 
-                            foreach($array as $jour => $heure) {
-                                echo '<li class="list-unstyled-item list-hours-item d-flex">' .
-                                $jour .
-                                '<span class="ms-auto">' . $heure . '</span>
-                                </li>';
+                            $auj = (int)date('w');
+                            foreach ($array as $jour => $heure) {
+                                if (array_search($jour, array_keys($array)) == $auj-1) {
+                                    echo '<li class="list-unstyled-item list-hours-item d-flex today">' .
+                                        $jour .
+                                        '<span class="ms-auto">' . $heure . '</span>
+                                    </li>';
+                                } else {
+                                    echo '<li class="list-unstyled-item list-hours-item d-flex">' .
+                                        $jour .
+                                        '<span class="ms-auto">' . $heure . '</span>
+                                    </li>';
+                                }
                             }
                         ?>
                     
