@@ -1,5 +1,6 @@
 <?php
-        $page = htmlspecialchars(filter_input(INPUT_GET,'page'));
+        //$page = htmlspecialchars(filter_input(INPUT_GET,'page'));
+        $page = filter_input(INPUT_GET,'page');
         $array = [
                 "lundi" => "18h à 22h",
                 "mardi" => "18h à 20h",

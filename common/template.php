@@ -4,7 +4,10 @@
     <body>
         <?php 
             include ('common/header.php');
-            include ('common/navigation.php'); 
+            include ('common/navigation.php');
+            // if(!isset($page)||empty($page)){
+            //     $page = 'actu';
+            // }
             if(!isset($page)){
                 $page = 'actu';
             }
@@ -22,7 +25,9 @@
                     include('content/crenaux_content.php');
                     break;
                 default:
-                    include('content/404.html');
+                    //include('content/404.html');
+                    header('Location: 404.html');
+                    die();
                     break;
                     
             }
